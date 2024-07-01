@@ -13,4 +13,18 @@ Ansible поддерживает более сложные варианты ук
 -m ios_command - параметр указывает какой модуль используется
 -a "commands='sh ip int br'" - параметр -a указывает, какую команду отправить
 Примечание
-Большинство параметров можно указать в интентарном файле или в файле переменных.
+Большинство параметров можно указать в интентарном файле или в файле переменных:
+
+[cisco_routers]
+192.168.100.1
+192.168.100.2
+192.168.100.3
+
+[cisco_routers:vars]
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_user=cisco
+ansible_password=cisco
+
+Теперь ad-hoc команду можно вызвать так:
+$ ansible 192.168.100.1 -i myhosts.ini -m ios_command -a "commands='sh ip int br'"
