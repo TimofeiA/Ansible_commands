@@ -1,3 +1,5 @@
+запуск playbook: ansible-playbook 1_show_commands.yml -v
+
 $ ansible 192.168.100.1 -i myhosts.ini -c network_cli -e ansible_network_os=ios -u cisco -k -m ios_command -a "commands='sh clock'"
 
 Разберемся с параметрами команды:
