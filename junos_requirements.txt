@@ -1,0 +1,9 @@
+- python 3.7.7
+- python packages:
+  - ansible==2.9.6
+  - Jinja2==2.11.2
+  - junos-eznc==2.5.2
+  - jxmlease==1.0.3
+  - lxml==4.5.2
+  - ncclient==0.6.9
+  - paramiko==2.7.1
