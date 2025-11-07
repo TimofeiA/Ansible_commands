@@ -1,4 +1,4 @@
 ansible testserver -i inventory/vagrant.ini -m ping                                          [webservers:vars]
-ansible testserver -m command -a uptime                                                                                           ansible_user=ec2-user
+ansible testserver -i hosts.ini -m command -a uptime                                                                                        ansible_user=ec2-user
                                                                                              ansible_private_key_file=/path/to/keyfile.pem
 
