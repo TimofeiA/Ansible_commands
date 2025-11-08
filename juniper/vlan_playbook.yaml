@@ -1,1 +1,20 @@
+---
+- name: Configure VLANs on Junos devices
+  hosts: juniper_switches
+  gather_facts: false
+  connection: ansible.netcommon.netconf
 
+  tasks:
+    - name: Create or modify VLANs
+      junipernetworks.junos.junos_vlans:
+        config:
+          - name: data_vlan
+            vlan_id: 10
+            description: "VLAN for data traffic"
+          - name: voice_vlan
+            vlan_id: 20
+            description: "VLAN for voice traffic"
+          - name: mgmt_vlan
+            vlan_id: 30
+            description: "VLAN for management"
+        state: merged
