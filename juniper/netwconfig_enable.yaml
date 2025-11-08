@@ -1,0 +1,11 @@
+- name: Configuring netconf
+  hosts: juniper_switches
+  gather_facts: no
+  connection: network_cli
+
+
+  tasks:
+    - name: Enable netconf on the junos
+      junos_netconf:
+        listens_on: 830
+        state: present
